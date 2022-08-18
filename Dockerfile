@@ -11,7 +11,7 @@ RUN set -ex \
 RUN apk add --no-cache python3
 
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-    
+
 # CMD [ "bash", "docker-entrypoint.sh" ]
 
-EXPOSE 4141 
+EXPOSE 4141
