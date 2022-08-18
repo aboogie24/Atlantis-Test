@@ -1,14 +1,17 @@
 FROM ghcr.io/runatlantis/atlantis:v0.19.7
 LABEL version=${VERSION}
-LABEL name=${NAME}
+LABEL name="atlantis"
 
 
-# RUN apt-get update \
-#     apt-get upgrade \
-#     apt-get install python3.6 
+RUN set -ex \
+    && apk update \
+    && apk upgrade --no-cache \
+    && rm -rf /var/cache/apk/*
 
-COPY ./docker-entrypoint.sh . 
+RUN apk add --no-cache python3
+
+COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
     
-CMD [ "bash", "docker-entrypoint.sh" ]
+# CMD [ "bash", "docker-entrypoint.sh" ]
 
-EXPOSE 4241 
+EXPOSE 4141 
