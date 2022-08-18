@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Check out Code
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Pre-commit
         uses: pre-commit/action@v3.0.0
