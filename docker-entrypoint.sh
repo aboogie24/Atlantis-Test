@@ -1,4 +1,5 @@
 #!/usr/bin/dumb-init /bin/sh
+# shellcheck shell=bash
 set -e
 
 # Modified: https://github.com/hashicorp/docker-consul/blob/2c2873f9d619220d1eef0bc46ec78443f55a10b5/0.X/docker-entrypoint.sh
@@ -36,7 +37,7 @@ if [[ $(id -u) == 0 ]] && [[ "$1" = 'atlantis' ]]; then
     # If requested, set the capability to bind to privileged ports before
     # we drop to the non-root user. Note that this doesn't work with all
     # storage drivers (it won't work with AUFS).
-    if [ ! -z ${ATLANTIS_ALLOW_PRIVILEGED_PORTS+x} ]; then
+    if [ -n "${ATLANTIS_ALLOW_PRIVILEGED_PORTS+x}" ]; then
         setcap "cap_net_bind_service=+ep" /bin/atlantis
     fi
 
