@@ -39,5 +39,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Release
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUT_ID }}
         run: |
           ./release.sh
