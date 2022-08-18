@@ -18,11 +18,6 @@ repos:
     hooks:
       - id: shell-lint
 
-  - repo: https://github.com/trussworks/pre-commit-hooks
-    rev: v1.1.0
-    hooks:
-      - id: circleci-validate
-
   - repo: https://github.com/awslabs/git-secrets
     rev: 80230afa8c8bdeac766a0fece36f95ffaa0be778
     hooks:
