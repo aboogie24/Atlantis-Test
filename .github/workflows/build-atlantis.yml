@@ -19,7 +19,8 @@ jobs:
         with:
           extra_args: --all-files
   
-  build: 
+  build:
+    needs: lint 
     runs-on: ubuntu-latest
     env: 
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
