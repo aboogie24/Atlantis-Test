@@ -1,6 +1,6 @@
 ---
 repos:
-  - repo: git://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
       - id: check-merge-conflict
@@ -18,12 +18,12 @@ repos:
     hooks:
       - id: shell-lint
 
-  - repo: git://github.com/trussworks/pre-commit-hooks
+  - repo: https://github.com/trussworks/pre-commit-hooks
     rev: v1.1.0
     hooks:
       - id: circleci-validate
 
-  - repo: git://github.com/awslabs/git-secrets
+  - repo: https://github.com/awslabs/git-secrets
     rev: 80230afa8c8bdeac766a0fece36f95ffaa0be778
     hooks:
       - id: git-secrets
