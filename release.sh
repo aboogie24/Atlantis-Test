@@ -2,6 +2,8 @@
 
 NOW=$(date '+%Y%m%d%H%M%S')
 
+docker images
+
 if (
   set -x -o nounset
   aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
