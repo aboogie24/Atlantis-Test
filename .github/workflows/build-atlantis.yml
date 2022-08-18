@@ -1,34 +1,33 @@
 name: Build Atlantis
 
 on: workflow_dispatch
-    
 
-env: 
+
+env:
   AWS_DEFAULT_REGION: us-east-1
 
-jobs: 
-  lint: 
+jobs:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Code 
-        uses: actions/checkout@v3 
-        with: 
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: Pre-commit 
+      - name: Check out Code
+        uses: actions/checkout@v3
+
+      - name: Pre-commit
         uses: pre-commit/action@v3.0.0
         with:
           extra_args: --all-files
-  
+
   build:
-    needs: lint 
+    needs: lint
     runs-on: ubuntu-latest
-    env: 
+    env:
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-    steps: 
-      - name: Check Out Code 
+    steps:
+      - name: Check Out Code
         uses: actions/checkout@v3
-        with: 
+        with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Build Container
-        run: | 
-          ./build.sh 
+        run: |
+          ./build.sh
