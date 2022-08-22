@@ -40,7 +40,7 @@ jobs:
           aws-region: us-east-1
       - name: Release
         env:
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUT_ID }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         run: |
           echo "This: ${AWS_ACCOUNT_ID}"
           ./release.sh ${AWS_ACCOUNT_ID}
