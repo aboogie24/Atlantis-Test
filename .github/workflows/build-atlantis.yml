@@ -41,3 +41,4 @@ jobs:
         run: |
           echo "This: ${AWS_ACCOUNT_ID}"
           ./release.sh ${AWS_ACCOUNT_ID}
+
