@@ -11,7 +11,7 @@ echo "${AWS_ACCOUNT_ID}"
 if (
   set -x -o nounset
   aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
-  docker login --username AWS --password-stdin "${AWS_ACCOUNT_ID}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
+  docker login --username AWS --password-stdin 608911059386.dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
 ); then
 
 sha=$(git rev-parse HEAD)
