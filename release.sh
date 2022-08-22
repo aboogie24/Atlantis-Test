@@ -4,9 +4,9 @@ NOW=$(date '+%Y%m%d%H%M%S')
 
 docker images
 
-# AWS_ACCOUNT_ID="608911059386"
+AWS_ACCOUNT_ID="608911059386"
 
-# echo "${AWS_ACCOUNT_ID}"
+echo "${AWS_ACCOUNT_ID}"
 
 if (
   set -x -o nounset
