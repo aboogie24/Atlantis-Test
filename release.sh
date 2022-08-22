@@ -8,6 +8,8 @@ AWS_ACCOUNT_ID="608911059386"
 
 echo "${AWS_ACCOUNT_ID}"
 
+env
+
 if (
   set -x -o nounset
   aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
