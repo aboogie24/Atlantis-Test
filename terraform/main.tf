@@ -57,7 +57,7 @@ data "aws_iam_policy_document" "assume-role" {
     }
 
     condition {
-      test = "StringEquals"
+      test = "StringLike"
       variable = "token.actions.githubusercontent.com:aud"
       values = ["sts.amazonaws.com"]
     }
@@ -65,7 +65,7 @@ data "aws_iam_policy_document" "assume-role" {
     condition {
       test = "StringLike"
       values = [
-        "repo:aboogie24/*"
+        "repo:aboogie24/*:*"
       ]
       variable = "token.actions.githubusercontent.com:sub"
     }
