@@ -20,4 +20,9 @@ tag="${sha}-${NOW}"
 
 echo "ATLANTIS_IMAGE_TAG=${tag}" >> "${GITHUB_ENV}"
 
+else
+  status=${?}
+  echo "FATAL: ECR Login failed" 1>&2
+  exit "${status}"
 fi
+
