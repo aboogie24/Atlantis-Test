@@ -22,8 +22,8 @@ jobs:
   build:
     needs: lint
     runs-on: ubuntu-latest
-    env:
-      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+    # env:
+    #   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
     steps:
       - name: Check Out Code
         uses: actions/checkout@v3
