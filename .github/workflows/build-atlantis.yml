@@ -24,6 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     # env:
     #   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Check Out Code
         uses: actions/checkout@v3
