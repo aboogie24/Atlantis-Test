@@ -4,16 +4,16 @@ NOW=$(date '+%Y%m%d%H%M%S')
 
 docker images
 
-AWS_ACCOUNT_ID="608911059386"
+ID="608911059386"
 
-echo "${AWS_ACCOUNT_ID}"
+echo "${ID}"
 
 env
 
 if (
   set -x -o nounset
   aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
-  docker login --username AWS --password-stdin "${AWS_ACCOUNT_ID}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
+  docker login --username AWS --password-stdin "${ID}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
 ); then
 
 sha=$(git rev-parse HEAD)
