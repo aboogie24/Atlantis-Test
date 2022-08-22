@@ -43,6 +43,6 @@ jobs:
           role-session-name: Mysession
       - name: Release
         run: |
-          echo "This: ${AWS_ACCOUNT_ID}"
-          ./release.sh ${AWS_ACCOUNT_ID}
+          echo "This: 608911059386"
+          ./release.sh 608911059386
 
