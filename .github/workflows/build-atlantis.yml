@@ -37,7 +37,6 @@ jobs:
         with:
           aws-region: us-east-1
           role-to-assume: "arn:aws:iam::608911059386:role/test_oidc_role"
-          role-session-name: "first-session"
 
       - name: Release
         run: |
