@@ -42,4 +42,5 @@ jobs:
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUT_ID }}
         run: |
+          echo ${AWS_ACCOUNT_ID}
           ./release.sh ${AWS_ACCOUNT_ID}
