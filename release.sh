@@ -2,13 +2,11 @@
 
 NOW=$(date '+%Y%m%d%H%M%S')
 
-docker images
-
 ID="608911059386"
 
 echo "${ID}"
 
-env
+
 
 if (
   set -x -o nounset
