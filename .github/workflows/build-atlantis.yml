@@ -44,7 +44,7 @@ jobs:
       - name: upload image to ECR
         uses: appleboy/docker-ecr-action@master
         with:
-          repo: bar
+          repo: atlantis
           registry: 608911059386.dkr.ecr.us-east-1.amazonaws.com
       # - name: Login to aws ECR
       #   id: ecr-login
