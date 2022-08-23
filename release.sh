@@ -12,8 +12,8 @@ echo "${ID} + ${ID2}"
 
 if (
   set -x -o nounset
-  aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" --debug | \
-  docker login --log-level debug --username AWS --password-stdin "${ID2}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
+  PS=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" --debug)
+  docker login --log-level debug --username AWS -p ${PS} "${ID2}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
 ); then
 
 sha=$(git rev-parse HEAD)
