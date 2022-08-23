@@ -41,13 +41,18 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::608911059386:role/test_oidc_role
           role-session-name: Mysession
-      - name: Login to aws ECR
-        id: ecr-login
-        uses: thalevon/ecr-login@master
+      - name: upload image to ECR
+        uses: appleboy/docker-ecr-action@master
         with:
-          args: 'get-login --no-inclued-email --region ${AWS_DEFAULT_REGION}'
-      - name: docker login
-        run: ${{ steps.ecr-login.outputs.login-string }}
+          repo: bar
+          registry: 608911059386.dkr.ecr.us-east-1.amazonaws.com
+      # - name: Login to aws ECR
+      #   id: ecr-login
+      #   uses: thalevon/ecr-login@master
+      #   with:
+      #     args: 'get-login --no-inclued-email --region ${AWS_DEFAULT_REGION}'
+      # - name: docker login
+      #   run: ${{ steps.ecr-login.outputs.login-string }}
       # - name: Release
       #   run: |
       #     echo "This: 608911059386"
