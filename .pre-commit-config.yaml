@@ -13,13 +13,19 @@ repos:
       - id: dockerfilelint
         stages: [commit]
 
-  - repo: https://github.com/detailyang/pre-commit-shell
-    rev: 1.0.5
-    hooks:
-      - id: shell-lint
+  # - repo: https://github.com/detailyang/pre-commit-shell
+  #   rev: 1.0.5
+  #   hooks:
+  #     - id: shell-lint
 
   - repo: https://github.com/awslabs/git-secrets
     rev: 80230afa8c8bdeac766a0fece36f95ffaa0be778
     hooks:
       - id: git-secrets
         entry: git-secrets --pre_commit_hook
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.74.1
+    hooks:
+      - id: terraform_fmt
+
