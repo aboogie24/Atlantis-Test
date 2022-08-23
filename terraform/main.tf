@@ -21,7 +21,7 @@ data "aws_iam_openid_connect_provider" "example" {
 }
 
 resource "aws_iam_role" "default" {
-  name = "test_oidc_role"
+  name               = "test_oidc_role"
   assume_role_policy = data.aws_iam_policy_document.assume-role.json
 
   depends_on = [
@@ -30,8 +30,8 @@ resource "aws_iam_role" "default" {
 }
 
 resource "aws_iam_role_policy" "default" {
-  name = "test_oidc_role_policy"
-  role = aws_iam_role.default.id
+  name   = "test_oidc_role_policy"
+  role   = aws_iam_role.default.id
   policy = data.aws_iam_policy_document.default.json
 
   depends_on = [
@@ -52,14 +52,14 @@ data "aws_iam_policy_document" "assume-role" {
     ]
 
     principals {
-      type = "Federated"
+      type        = "Federated"
       identifiers = ["${data.aws_iam_openid_connect_provider.example.arn}"]
     }
 
     condition {
-      test = "StringLike"
+      test     = "StringLike"
       variable = "token.actions.githubusercontent.com:aud"
-      values = ["sts.amazonaws.com"]
+      values   = ["sts.amazonaws.com"]
     }
 
     condition {
