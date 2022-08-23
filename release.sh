@@ -12,7 +12,7 @@ echo "${ID} + ${ID2}"
 
 if (
   set -x -o nounset
-  PS=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" --debug)
+  PS=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" --debug) | \
   docker login --username AWS --password-stdin "${ID2}".dkr.ecr."${AWS_DEFAULT_REGION}".amazon.com
 ); then
 
