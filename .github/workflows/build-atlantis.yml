@@ -42,10 +42,11 @@ jobs:
           role-to-assume: arn:aws:iam::608911059386:role/test_oidc_role
           role-session-name: Mysession
       - name: upload image to ECR
-        uses: appleboy/docker-ecr-action@master
+        uses: docker://ghcr.io/kciter/aws-ecr-action:latest
         with:
           repo: atlantis
-          registry: 608911059386.dkr.ecr.us-east-1.amazonaws.com
+          region: us-east-1
+          create_repo: false
       # - name: Login to aws ECR
       #   id: ecr-login
       #   uses: thalevon/ecr-login@master
