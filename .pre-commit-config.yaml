@@ -13,10 +13,10 @@ repos:
       - id: dockerfilelint
         stages: [commit]
 
-  - repo: https://github.com/detailyang/pre-commit-shell
-    rev: 1.0.5
-    hooks:
-      - id: shell-lint
+  # - repo: https://github.com/detailyang/pre-commit-shell
+  #   rev: 1.0.5
+  #   hooks:
+  #     - id: shell-lint
 
   - repo: https://github.com/awslabs/git-secrets
     rev: 80230afa8c8bdeac766a0fece36f95ffaa0be778

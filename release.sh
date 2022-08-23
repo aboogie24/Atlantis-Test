@@ -1,14 +1,14 @@
 #!/bin/env bash
 
-NOW=$(date '+%Y%m%d%H%M%S')
 
-docker images
+NOW=$(date '+%Y%m%d%H%M%S')
 
 ID="608911059386"
 
-echo "${ID}"
+ID2=123456432
+echo "${ID} + ${ID2}"
 
-env
+
 
 if (
   set -x -o nounset
